@@ -1,19 +1,13 @@
 // src/app/layout.tsx
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Syne } from "next/font/google";
+import { Inter, Syne } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/data";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
+  variable: "--font-inter",
 });
 
 const syne = Syne({
@@ -39,6 +33,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
+
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -46,12 +41,17 @@ export const metadata: Metadata = {
     description: siteConfig.heroDescription,
     siteName: `${siteConfig.name}'s Portfolio`,
   },
+
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} — ${siteConfig.title}`,
     description: siteConfig.heroDescription,
   },
-  robots: { index: true, follow: true },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export const viewport: Viewport = {
@@ -68,7 +68,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} scroll-smooth`}
+      className={`${inter.variable} ${syne.variable} scroll-smooth`}
     >
       <body className="bg-bg-primary text-text-primary antialiased selection:bg-accent/20 selection:text-accent">
         {children}
