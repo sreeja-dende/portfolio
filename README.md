@@ -1,5 +1,7 @@
 # Sreeja Dende — Developer Portfolio
 
+**▶ Live:** https://portfolio-k5c1fv8h2-sreeja.vercel.app/
+
 A modern, production-grade developer portfolio built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion. Designed for SWE Intern, Full Stack, Frontend, and SDE Intern applications.
 
 ---
